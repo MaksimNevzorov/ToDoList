@@ -1,17 +1,13 @@
-import { Component } from "../../core";
+import { Component } from "../../../core";
 
 export class Button extends Component {
 
-    registerEvents() {
-        this.addEventListener("click", () => {
-            this.dispatchEvent(this.props.eventtype);
+    componentDidMount() {
+        this.addEventListener('click', () => {
+            this.dispatch(this.props.eventtype);
         })
     }
-     
-    componentWillUodate(name, oldValue, newValue) {
-        console.log(name, oldValue, newValue)
-    }
-     
+         
      static get observedAttributes() {
         return ['content', 'classname', 'eventtype']
      }

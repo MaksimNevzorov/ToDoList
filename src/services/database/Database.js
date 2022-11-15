@@ -32,7 +32,7 @@ export class Database {
     
     update(collectionKey, id, body) {
         const document = doc(this._database, collectionKey, id);
-        return updateDoc(document);
+        return updateDoc(document, body);
     };
     
     delete(collectionKey, id) {
